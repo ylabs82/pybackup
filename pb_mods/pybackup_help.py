@@ -120,6 +120,7 @@ def __help_body():
     print(f"Usage: {bp_c.EXECUTABLE} [options...]")
     print("   -c, --configuration <configuration file> Configuration file")
     print("   -r, --rotations <rotations file>         Rotations file")
+    print("   -e, --errorlog <rsync error log file>    rsync error log file")
     print("   -h, --help <category>                    Get full help")
 
 

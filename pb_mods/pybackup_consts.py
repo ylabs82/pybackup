@@ -32,7 +32,7 @@ import sys
 
 EXECUTABLE = os.path.basename(sys.argv[0])
 PROG_NAME = "Python Backup"
-PROG_VERSION = "0.1.0"
+PROG_VERSION = "0.1.1"
 PROG_YEAR = "2025"
 PROG_COMPANY = "Yago Mouriño Mendaña <ylabs82@gmail.com>"
 

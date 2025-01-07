@@ -88,6 +88,10 @@ def main():
     # Add the destination to the rsync command.
     rsync_command += f" {current_dest}"
 
+    # If the user wants to log errors, add the log file to the rsync command.
+    if arguments.errorlog is not None:
+        rsync_command += f" 2> {arguments.errorlog}"
+
     # Execute the rsync command.
     p = subprocess.Popen(rsync_command, shell=True, stderr=subprocess.PIPE)
 

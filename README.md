@@ -12,13 +12,14 @@ PyBackup needs the program `rsync` to work. Make sure you have it installed.
 - Rotate backup destinations after each backup.
 - Simple configuration through text files.
 - Detailed help and usage instructions.
+- rsync error logging.
 
 ## Usage
 
 To run the backup utility, use the following command:
 
 ```sh
-python pybackup.py -c <configuration_file> -r <rotations_file>
+python pybackup.py -c <configuration_file> -r <rotations_file> -e <errorlog file>
 ```
 
 If no files are provided, the program will use the default configuration and
@@ -83,7 +84,7 @@ This project is licensed under the MIT License.
 
 ```text
 The MIT License (MIT)
-Copyright (c) 2024 Yago Mouriño Mendaña
+Copyright (c) 2025 Yago Mouriño Mendaña
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the “Software”), to deal in

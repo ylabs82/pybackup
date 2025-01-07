@@ -45,6 +45,7 @@ def process_arguments():
 
     argument_parser.add_argument("-c", "--configuration")
     argument_parser.add_argument("-r", "--rotations")
+    argument_parser.add_argument("-e", "--errorlog")
     argument_parser.add_argument(
         "-h", "--help", const="none", dest="help_category", nargs="?", type=str.lower)
 
@@ -82,6 +83,18 @@ def __parse_arguments(argument_parser):
         if not os.path.isfile(arguments.rotations):
             exceptions.append("Rotations file does not exist or is not a file")
             exit_code = 1
+
+        if arguments.errorlog is not None:
+            if os.path.isdir(arguments.errorlog):
+                exceptions.append("Error log file is a directory")
+                exit_code = 1
+
+            if os.path.isfile(arguments.errorlog):
+                print("Error log file already exists")
+                answer = input("Do you want to overwrite it? [y/N] ")
+                if answer.lower() != "y":
+                    exceptions.append("Error log file already exists")
+                    exit_code = 1
 
     except argparse.ArgumentError as exception:
         exceptions.append(exception)
